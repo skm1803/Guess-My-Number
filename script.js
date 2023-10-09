@@ -9,12 +9,20 @@ document.querySelector('.number').textContent=number;
 document.querySelector('.check').addEventListener('click',function check(){
    const guess=  Number(document.querySelector('.guess').value);
    console.log(guess ,typeof guess);
-  
+
+  // When there is no input
    if (!guess) {
      document.querySelector('.message').textContent = 'No Number! ⛔';
-   } else if (guess === number) {
-     document.querySelector('.message').textContent = 'Corect Number! ✔';
-   } else if (guess > number) {
+   }
+   // when players wins
+    else if (guess === number) {
+        document.querySelector('.message').textContent = 'Corect Number! ✔';
+        document.querySelector('body').style.backgroundColor='green';
+        document.querySelector('.number').style.width='30rem';
+    
+    }
+   // when guess  number is high
+   else if (guess > number) {
     if(score>1)
     {
         document.querySelector('.message').textContent = 'Too High📈!';
