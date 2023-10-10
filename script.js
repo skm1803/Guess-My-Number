@@ -4,7 +4,15 @@ let number = Math.trunc(Math.random()*20)+1;
 let score = 20;
 let highScore=0;
 
-
+document.querySelector('.again').addEventListener('click', function again() {
+  document.querySelector('.message').textContent = 'Start guessing...';
+  document.querySelector('.number').textContent = '?';
+  document.querySelector('.score').textContent = 20;
+  document.querySelector('.guess').value = ' ';
+  document.querySelector('body').style.backgroundColor = 'black';
+  number = Math.trunc(Math.random() * 20) + 1;
+  score = 20;
+});
 
 document.querySelector('.check').addEventListener('click',function check(){
    const guess=  Number(document.querySelector('.guess').value);
