@@ -1,9 +1,9 @@
 'use strict';
 
-const number = Math.trunc(Math.random()*20)+1;   
+let number = Math.trunc(Math.random()*20)+1;   
 let score = 20;
+let highScore=0;
 
-document.querySelector('.number').textContent=number;
 
 
 document.querySelector('.check').addEventListener('click',function check(){
@@ -19,6 +19,13 @@ document.querySelector('.check').addEventListener('click',function check(){
         document.querySelector('.message').textContent = 'Corect Number! ✔';
         document.querySelector('body').style.backgroundColor='green';
         document.querySelector('.number').style.width='30rem';
+        document.querySelector('.number').textContent = number;
+        if(highScore<score)
+        {
+            highScore = score;
+            document.querySelector('.highscore').textContent = highScore;
+    }
+        
     
     }
    // when guess  number is high
